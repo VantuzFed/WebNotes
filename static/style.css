@@ -1,0 +1,26 @@
+body {
+    background-color: #FDF6E3;
+}
+
+header {
+  background-color: #4b2d17;
+
+}
+
+h1 {
+  color: #333333;
+}
+
+p {
+  color: #666666;
+}
+
+.jumbotron {
+    background-color: #DFF0D8;
+    padding: 2rem 1rem;
+    border-radius: .3rem;
+}
+
+a.nav-link {
+    color: #ffffff;
+}

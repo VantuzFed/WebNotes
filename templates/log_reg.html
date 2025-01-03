@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}WebNotes - {{ page_name }}{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Окно {{ page_name }}</h1>
+        <hr class="my-4">
+
+
+<main class="form-signin w-100 m-auto">
+<form method="POST" action="{{ url_for(type) }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+        {% for field in form %}
+            {% if field.name != 'csrf_token' %}
+                <div>
+                    <a>{{ field.label }}</a> <p>{{ field }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    <input class="btn btn-primary d-inline-flex align-items-center" style="background-color: #4b2d17;" type="submit" value="{{ page_name }}">
+</form>
+</div>
+    {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+         </div>
+{% endblock %}
